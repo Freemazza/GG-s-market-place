@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Online Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1>🛍️ My Online Shop</h1>
+
+<div class="products">
+
+  <div class="product">
+    <h3>Phone Case</h3>
+    <p>KSh 500</p>
+    <button onclick="addToCart('Phone Case', 500)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h3>Headphones</h3>
+    <p>KSh 1200</p>
+    <button onclick="addToCart('Headphones', 1200)">Add to Cart</button>
+  </div>
+
+</div>
+
+<h2>🛒 Cart</h2>
+<div id="cart"></div>
+<p>Total: KSh <span id="total">0</span></p>
+
+<script src="script.js"></script>
+</body>
+</html>
