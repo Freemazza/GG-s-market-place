@@ -1,235 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="styles.css">
-<script src="script.js" defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GG Marketplace - Buy, Sell &amp; Trade in Nairobi</title>
+    <title>GG Sales - Login & Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        :root { --primary: #00ff88; }
+        .tailwind-ready { font-family: 'Inter', system_ui, sans-serif; }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); }
+        .product-slot { 
+            border: 2px dashed #00ff88; 
+            background: rgba(0, 255, 136, 0.05); 
+            border-radius: 20px; 
         }
-        .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        .section-header:after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 60px; height: 3px; background: #00ff88;
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
-    <!-- Navbar -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">GG</div>
-                <div>
-                    <span class="font-bold text-2xl tracking-tight">GG Marketplace</span>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 -mt-1">Nairobi • Kenya</p>
-                </div>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#home" class="hover:text-emerald-600 transition">Home</a>
-                <a href="#categories" class="hover:text-emerald-600 transition">Categories</a>
-                <a href="#how" class="hover:text-emerald-600 transition">How it Works</a>
-                <a href="#about" class="hover:text-emerald-600 transition">About</a>
-            </div>
-            
-            <div class="flex items-center space-x-4">
-                <button onclick="toggleDarkMode()" class="p-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:block"></i>
-                </button>
-                <a href="#sell" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-2xl font-semibold flex items-center gap-2 transition">
-                    <i class="fas fa-plus"></i> Sell Now
-                </a>
-                <a href="#login" class="border border-gray-300 dark:border-gray-600 px-5 py-2.5 rounded-2xl font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Login</a>
-            </div>
-        </div>
-    </nav>
+<body class="tailwind-ready bg-zinc-950 text-white">
 
-    <!-- Hero -->
-    <section id="home" class="hero-bg h-screen flex items-center text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-                Buy, Sell &amp; Trade<br>Anything in Kenya
-            </h1>
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-10 text-gray-200">
-                Nairobi's fastest growing marketplace. From electronics and fashion to cars and services — connect with local buyers and sellers instantly.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#browse" class="bg-white text-emerald-700 hover:bg-gray-100 px-10 py-4 rounded-3xl font-semibold text-lg inline-flex items-center justify-center gap-3 transition">
-                    <i class="fas fa-search"></i> Browse Listings
-                </a>
-                <a href="#sell" class="border-2 border-white hover:bg-white hover:text-emerald-700 px-10 py-4 rounded-3xl font-semibold text-lg inline-flex items-center justify-center gap-3 transition">
-                    Start Selling Today
-                </a>
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen" class="min-h-screen hero-bg flex items-center justify-center px-6">
+        <div class="max-w-2xl w-full bg-zinc-900 rounded-3xl shadow-2xl overflow-hidden">
+            <div class="bg-black px-8 py-6 flex items-center justify-between border-b border-zinc-800">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-[#00ff88] rounded-2xl flex items-center justify-center text-black font-bold text-2xl">G</div>
+                    <h1 class="logo-font text-4xl tracking-tighter">GG SALES</h1>
+                </div>
+                <div class="text-[#00ff88]">LIVE • Nairobi, KE</div>
             </div>
-            <div class="mt-16 flex justify-center gap-8 text-sm">
-                <div class="flex items-center gap-2"><i class="fas fa-shield-alt"></i> Secure Payments</div>
-                <div class="flex items-center gap-2"><i class="fas fa-users"></i> 10k+ Active Users</div>
-                <div class="flex items-center gap-2"><i class="fas fa-truck"></i> Fast Local Delivery</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Categories -->
-    <section id="categories" class="py-20 bg-white dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-3">Popular Categories</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-md mx-auto">Find what you're looking for or list your own items</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="category-card bg-white dark:bg-gray-900 p-6 rounded-3xl border border-gray-100 dark:border-gray-700 cursor-pointer transition-all">
-                    <div class="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center text-3xl mb-4">📱</div>
-                    <h3 class="font-semibold text-xl mb-1">Phones &amp; Electronics</h3>
-                    <p class="text-sm text-gray-500">Smartphones, laptops, accessories</p>
-                </div>
-                <div class="category-card bg-white dark:bg-gray-900 p-6 rounded-3xl border border-gray-100 dark:border-gray-700 cursor-pointer transition-all">
-                    <div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 rounded-2xl flex items-center justify-center text-3xl mb-4">👟</div>
-                    <h3 class="font-semibold text-xl mb-1">Fashion &amp; Beauty</h3>
-                    <p class="text-sm text-gray-500">Clothes, shoes, cosmetics</p>
-                </div>
-                <div class="category-card bg-white dark:bg-gray-900 p-6 rounded-3xl border border-gray-100 dark:border-gray-700 cursor-pointer transition-all">
-                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-3xl mb-4">🏠</div>
-                    <h3 class="font-semibold text-xl mb-1">Home &amp; Furniture</h3>
-                    <p class="text-sm text-gray-500">Sofas, kitchen, decor</p>
-                </div>
-                <div class="category-card bg-white dark:bg-gray-900 p-6 rounded-3xl border border-gray-100 dark:border-gray-700 cursor-pointer transition-all">
-                    <div class="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center text-3xl mb-4">🚗</div>
-                    <h3 class="font-semibold text-xl mb-1">Vehicles</h3>
-                    <p class="text-sm text-gray-500">Cars, bikes, parts</p>
-                </div>
-                <!-- Add more as needed -->
-            </div>
-        </div>
-    </section>
+            <div class="p-8">
+                <h2 class="text-3xl font-semibold mb-2">Welcome back 👋</h2>
+                <p class="text-zinc-400 mb-8">Sign in to your GG Sales account</p>
 
-    <!-- How it Works -->
-    <section id="how" class="py-20 bg-gray-100 dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12">How GG Marketplace Works</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="text-center">
-                    <div class="mx-auto w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-4xl mb-6">1️⃣</div>
-                    <h3 class="font-semibold text-2xl mb-3">Post Your Item</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Upload photos, set price, and reach thousands of buyers in Nairobi and beyond.</p>
-                </div>
-                <div class="text-center">
-                    <div class="mx-auto w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-4xl mb-6">2️⃣</div>
-                    <h3 class="font-semibold text-2xl mb-3">Connect &amp; Negotiate</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Chat directly with buyers or sellers. Safe in-app messaging.</p>
-                </div>
-                <div class="text-center">
-                    <div class="mx-auto w-20 h-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-4xl mb-6">3️⃣</div>
-                    <h3 class="font-semibold text-2xl mb-3">Meet or Deliver</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Meet locally or use our trusted delivery partners. Pay securely.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Username / Email</label>
+                        <input id="username" type="text" value="demo@ggsales.co.ke" 
+                               class="w-full bg-zinc-800 border border-zinc-700 focus:border-[#00ff88] rounded-2xl px-5 py-4 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Password</label>
+                        <input id="password" type="password" value="ggsales2026" 
+                               class="w-full bg-zinc-800 border border-zinc-700 focus:border-[#00ff88] rounded-2xl px-5 py-4 outline-none">
+                    </div>
 
-    <!-- About / Why Us -->
-    <section id="about" class="py-20">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">Why Choose GG Marketplace?</h2>
-                <ul class="space-y-6">
-                    <li class="flex gap-4">
-                        <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
-                        <div>
-                            <strong>Local Focus</strong> — Built for Nairobi and Kenya. Meet sellers in person or get fast delivery.
+                    <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-6 text-sm max-h-64 overflow-y-auto">
+                        <h3 class="font-semibold text-[#00ff88] mb-4">📜 TERMS & CONDITIONS</h3>
+                        <ol class="list-decimal list-inside space-y-3 text-zinc-300">
+                            <li>Interference with the app through harmful means is highly prohibited and punishable.</li>
+                            <li>Store operates under **NO REFUND** rule. Kindly adhere.</li>
+                            <li>Damaged goods during shipment are not covered.</li>
+                            <li>Faulty gadgets are replaceable with valid reason.</li>
+                            <li>Every item has 1-year warranty.</li>
+                            <li>Payment via M-Pesa only — keep receipt.</li>
+                        </ol>
+                        <div class="flex gap-2 mt-6">
+                            <input type="checkbox" id="accept-terms" checked class="accent-[#00ff88]">
+                            <label for="accept-terms" class="text-xs cursor-pointer">I agree to the terms</label>
                         </div>
-                    </li>
-                    <li class="flex gap-4">
-                        <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
-                        <div>
-                            <strong>Zero Listing Fees</strong> — Post as many items as you want for free.
-                        </div>
-                    </li>
-                    <li class="flex gap-4">
-                        <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
-                        <div>
-                            <strong>Safe &amp; Secure</strong> — Verified users, escrow options, and buyer/seller protection.
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-emerald-50 dark:bg-emerald-950/50 p-10 rounded-3xl">
-                <p class="italic text-lg">"GG Marketplace helped me sell my old phone in under 2 hours. Best decision ever!"</p>
-                <p class="mt-6 font-medium">— Jane M., Nairobi</p>
-            </div>
-        </div>
-    </section>
+                    </div>
 
-    <!-- CTA Sell -->
-    <section id="sell" class="py-20 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-5xl font-bold mb-6">Ready to Sell?</h2>
-            <p class="text-xl mb-10">Turn your unused items into cash today. Join thousands of successful sellers across Kenya.</p>
-            <button onclick="alert('In a real site this would open the sell form or dashboard. For now, imagine it does! 🚀')" 
-                    class="bg-white text-emerald-700 hover:bg-amber-50 px-12 py-5 rounded-3xl font-bold text-xl inline-flex items-center gap-4">
-                Post Your First Listing Now <i class="fas fa-arrow-right"></i>
-            </button>
+                    <button type="submit" class="w-full bg-[#00ff88] hover:bg-emerald-400 text-black font-semibold py-4 rounded-3xl text-lg">LOGIN SECURELY</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-            <div>
-                <div class="flex items-center gap-3 text-white mb-4">
-                    <div class="w-9 h-9 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center font-bold">GG</div>
-                    <span class="font-bold text-2xl">GG Marketplace</span>
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="hidden min-h-screen bg-zinc-950">
+        <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+            <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-[#00ff88] rounded-2xl flex items-center justify-center text-black font-bold">G</div>
+                    <h1 class="logo-font text-3xl tracking-tighter">GG SALES</h1>
                 </div>
-                <p class="text-sm">Nairobi's trusted marketplace for buying and selling anything.</p>
-            </div>
-            <div>
-                <h4 class="font-semibold text-white mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-white">Browse</a></li>
-                    <li><a href="#" class="hover:text-white">Sell</a></li>
-                    <li><a href="#" class="hover:text-white">Categories</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-white mb-4">Support</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-white">Help Center</a></li>
-                    <li><a href="#" class="hover:text-white">Safety Tips</a></li>
-                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-white mb-4">Connect</h4>
-                <div class="flex gap-4 text-2xl">
-                    <a href="#" class="hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
+                <div class="flex gap-8 text-sm">
+                    <a onclick="navigateToSection('shop')" class="hover:text-[#00ff88]">🛒 Shop</a>
+                    <a onclick="navigateToSection('tracker')" class="hover:text-[#00ff88]">📦 Tracker</a>
+                    <a onclick="navigateToSection('profile')" class="hover:text-[#00ff88]">👤 Profile</a>
                 </div>
-                <p class="mt-6 text-xs">© 2026 GG Marketplace. All rights reserved.</p>
+                <div onclick="logout()" class="cursor-pointer flex items-center gap-2">
+                    <span>Demo User</span> 
+                    <div class="w-8 h-8 bg-zinc-700 rounded-2xl flex items-center justify-center">👋</div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="max-w-screen-2xl mx-auto px-8 py-10">
+            <h1 class="text-5xl font-semibold tracking-tighter">Good morning! Welcome to GG Sales 🌍</h1>
+            <p class="text-zinc-400">Business Hours: 5:00 PM – 6:00 PM • Nairobi, Kenya</p>
+
+            <!-- Message Area -->
+            <div class="mt-10 bg-zinc-900 rounded-3xl p-6">
+                <h3 class="text-xl font-medium mb-4">💬 Message Center</h3>
+                <div id="message-display" class="h-64 bg-black rounded-2xl p-5 overflow-auto space-y-4 text-sm"></div>
+                <div class="flex mt-4 gap-3">
+                    <input id="message-input" placeholder="Type your message..." class="flex-1 bg-zinc-800 rounded-3xl px-6 py-4">
+                    <button onclick="sendMessage()" class="bg-[#00ff88] text-black px-8 rounded-3xl font-medium">SEND</button>
+                </div>
+            </div>
+
+            <!-- Shop Section -->
+            <div id="shop" class="mt-16">
+                <h3 class="text-2xl font-semibold mb-6">🛍️ Shop (Admin Slots)</h3>
+                <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
+            </div>
+
+            <!-- PURCHASE TRACKER - Improved -->
+            <div id="tracker" class="mt-16">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-semibold">📦 Purchase Tracker</h3>
+                    <button onclick="refreshTracker()" 
+                            class="text-sm bg-zinc-800 hover:bg-zinc-700 px-5 py-2 rounded-3xl flex items-center gap-2">
+                        ↻ Refresh
+                    </button>
+                </div>
+                <div class="bg-zinc-900 rounded-3xl overflow-hidden">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-zinc-800 text-xs uppercase">
+                                <th class="p-6 text-left">Order ID</th>
+                                <th class="p-6 text-left">Item</th>
+                                <th class="p-6 text-left">Date</th>
+                                <th class="p-6 text-left">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tracker-body" class="text-sm"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PROFILE SECTION - Improved -->
+            <div id="profile" class="mt-16 bg-zinc-900 rounded-3xl p-8">
+                <h3 class="text-2xl font-semibold mb-8">👤 My Profile & Payment Center</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- Left: Payment Form -->
+                    <div>
+                        <h4 class="font-medium mb-4">💸 Make Payment</h4>
+                        <div class="bg-black rounded-3xl p-6 space-y-6">
+                            <div>
+                                <p class="text-sm text-zinc-400">Pay to this M-Pesa Number</p>
+                                <div class="font-mono text-4xl mt-2 text-[#00ff88]">0742582819</div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm mb-2">Your Delivery Location</label>
+                                <input id="customer-location" type="text" value="Nairobi CBD, Opposite Kenyatta Hospital" 
+                                       class="w-full bg-zinc-800 border border-zinc-700 rounded-3xl px-5 py-4">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm mb-2">Paste M-Pesa Receipt Here</label>
+                                <textarea id="receipt-input" rows="4" placeholder="Example: RMP12345678 • KSh 2,500 • 18 Apr 2026"
+                                          class="w-full bg-zinc-800 border border-zinc-700 rounded-3xl px-5 py-4"></textarea>
+                            </div>
+
+                            <button onclick="submitReceipt()" 
+                                    class="w-full py-4 bg-[#00ff88] text-black rounded-3xl font-semibold text-lg">
+                                VERIFY PAYMENT & CONFIRM ORDER
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Wallet + Delivery Info -->
+                    <div class="space-y-8">
+                        <div class="bg-gradient-to-br from-emerald-600 to-[#00ff88] text-black rounded-3xl p-8">
+                            <p class="text-sm opacity-75">GG WALLET BALANCE</p>
+                            <p id="wallet-balance" class="text-5xl font-semibold mt-2">KSh 4,820</p>
+                            <button onclick="addToWallet()" 
+                                    class="mt-6 w-full bg-black text-white py-3 rounded-3xl text-sm font-medium">
+                                ADD FUNDS VIA MPESA
+                            </button>
+                        </div>
+
+                        <div class="bg-zinc-800 rounded-3xl p-6 text-sm">
+                            <h4 class="font-medium mb-3">Delivery Details</h4>
+                            <p class="text-zinc-300">Same-day delivery within Nairobi (5 PM - 6 PM window).</p>
+                            <p class="text-zinc-300 mt-2">Outside Nairobi: Next day via courier.</p>
+                            <p class="mt-4 text-emerald-400 text-xs">Contact: 0755892917 (WhatsApp)</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script>
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-        }
-        
-        // Smooth scrolling for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+        // Demo Login
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (document.getElementById('password').value === "ggsales2026") {
+                document.getElementById('login-screen').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                loadProducts();
+                loadTracker();
+                loadDemoMessages();
+            } else {
+                alert("Wrong password. Use: ggsales2026");
+            }
         });
+
+        function loadProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+            for (let i = 1; i <= 20; i++) {
+                grid.innerHTML += `
+                    <div class="product-slot p-4">
+                        <div class="aspect-square bg-zinc-800 rounded-2xl flex items-center justify-center text-6xl mb-3">📦</div>
+                        <p class="font-medium text-sm">Product Slot ${i}</p>
+                        <p class="text-[#00ff88] text-xs">KSh --,-- • Admin</p>
+                    </div>`;
+            }
+        }
+
+        let trackerData = [
+            { id: "GG-784291", item: "Samsung Galaxy S25", date: "18 Apr 2026", status: "Delivered" },
+            { id: "GG-784290", item: "Wooden Dining Table", date: "17 Apr 2026", status: "In Transit" },
+            { id: "GG-784289", item: "Wireless Earbuds", date: "16 Apr 2026", status: "Preparing" }
+        ];
+
+        function loadTracker() {
+            const tbody = document.getElementById('tracker-body');
+            tbody.innerHTML = '';
+            trackerData.forEach(order => {
+                const statusColor = order.status === "Delivered" ? "text-emerald-400" : 
+                                   order.status === "In Transit" ? "text-amber-400" : "text-blue-400";
+                tbody.innerHTML += `
+                    <tr class="border-b border-zinc-800 last:border-none">
+                        <td class="p-6 font-mono">${order.id}</td>
+                        <td class="p-6">${order.item}</td>
+                        <td class="p-6">${order.date}</td>
+                        <td class="p-6 \( {statusColor}"> \){order.status}</td>
+                    </tr>`;
+            });
+        }
+
+        function refreshTracker() {
+            trackerData.unshift({
+                id: "GG-" + Math.floor(100000 + Math.random() * 900000),
+                item: "New Order",
+                date: "18 Apr 2026",
+                status: "Preparing"
+            });
+            loadTracker();
+        }
+
+        function loadDemoMessages() {
+            const display = document.getElementById('message-display');
+            display.innerHTML = `<div class="bg-zinc-800 p-4 rounded-3xl">Support will reply during business hours (5-6 PM).</div>`;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('message-input');
+            if (!input.value) return;
+            const display = document.getElementById('message-display');
+            display.innerHTML += `<div class="text-right"><div class="inline-block bg-[#00ff88] text-black px-5 py-3 rounded-3xl">${input.value}</div></div>`;
+            input.value = '';
+        }
+
+        function submitReceipt() {
+            const receipt = document.getElementById('receipt-input').value.trim();
+            if (receipt) {
+                alert("✅ Payment Verified!\n\nYour order has been confirmed and added to the tracker.\nDelivery expected 5-6 PM.");
+                document.getElementById('receipt-input').value = '';
+                refreshTracker();
+            } else {
+                alert("Please paste your M-Pesa receipt first.");
+            }
+        }
+
+        function addToWallet() {
+            alert("💰 Top-up via M-Pesa to 0742582819\nWallet balance will be updated after verification.");
+        }
+
+        function logout() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('login-screen').classList.remove('hidden');
+        }
+
+        function navigateToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initial demo messages
+        window.onload = () => {
+            // Nothing extra needed - loaded after login
+        };
     </script>
 </body>
-  </html>
+                            </html>
