@@ -98,7 +98,7 @@
 
             <!-- Message Area -->
             <div class="mt-10 bg-zinc-900 rounded-3xl p-6">
-                <h3 class="text-xl font-medium mb-4">💬 Message Center</h3>
+                <h3 class="text-xl font-medium mb-4"> Message Center</h3>
                 <div id="message-display" class="h-64 bg-black rounded-2xl p-5 overflow-auto space-y-4 text-sm"></div>
                 <div class="flex mt-4 gap-3">
                     <input id="message-input" placeholder="Type your message..." class="flex-1 bg-zinc-800 rounded-3xl px-6 py-4">
@@ -108,14 +108,14 @@
 
             <!-- Shop Section -->
             <div id="shop" class="mt-16">
-                <h3 class="text-2xl font-semibold mb-6">🛍️ Shop (Admin Slots)</h3>
+                <h3 class="text-2xl font-semibold mb-6">Shop (Admin Slots)</h3>
                 <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
             </div>
 
             <!-- PURCHASE TRACKER - Improved -->
             <div id="tracker" class="mt-16">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-semibold">📦 Purchase Tracker</h3>
+                    <h3 class="text-2xl font-semibold"> Purchase Tracker</h3>
                     <button onclick="refreshTracker()" 
                             class="text-sm bg-zinc-800 hover:bg-zinc-700 px-5 py-2 rounded-3xl flex items-center gap-2">
                         ↻ Refresh
@@ -138,12 +138,12 @@
 
             <!-- PROFILE SECTION - Improved -->
             <div id="profile" class="mt-16 bg-zinc-900 rounded-3xl p-8">
-                <h3 class="text-2xl font-semibold mb-8">👤 My Profile & Payment Center</h3>
+                <h3 class="text-2xl font-semibold mb-8"> My Profile & Payment Center</h3>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <!-- Left: Payment Form -->
                     <div>
-                        <h4 class="font-medium mb-4">💸 Make Payment</h4>
+                        <h4 class="font-medium mb-4"> Make Payment</h4>
                         <div class="bg-black rounded-3xl p-6 space-y-6">
                             <div>
                                 <p class="text-sm text-zinc-400">Pay to this M-Pesa Number</p>
@@ -268,7 +268,7 @@
         function submitReceipt() {
             const receipt = document.getElementById('receipt-input').value.trim();
             if (receipt) {
-                alert("✅ Payment Verified!\n\nYour order has been confirmed and added to the tracker.\nDelivery expected 5-6 PM.");
+                alert("Payment Verified!\n\nYour order has been confirmed and added to the tracker.\nDelivery expected 5-6 PM.");
                 document.getElementById('receipt-input').value = '';
                 refreshTracker();
             } else {
@@ -277,7 +277,7 @@
         }
 
         function addToWallet() {
-            alert("💰 Top-up via M-Pesa to 0742582819\nWallet balance will be updated after verification.");
+            alert(" Top-up via M-Pesa to 0742582819\nWallet balance will be updated after verification.");
         }
 
         function logout() {
@@ -295,4 +295,4 @@
         };
     </script>
 </body>
-</html>
+                            </html>                                
